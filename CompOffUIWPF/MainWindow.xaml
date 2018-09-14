@@ -1,0 +1,134 @@
+﻿<Window x:Class="CompOffUIWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompOffUIWPF"
+        mc:Ignorable="d"
+        Height="300" 
+        Width="400"
+        Title="CompOff">
+    <Grid Background="{Binding BackgroundColor.Value}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                   HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                   Text="CompOff" TextBlock.FontSize="18pt"
+                   Background="{Binding BackgroundColor.Value}" 
+                   TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                    HorizontalAlignment ="Center" VerticalAlignment="Center"
+                    Orientation="Horizontal" >
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text="Óra" 
+                       TextBlock.FontSize="16pt"
+                       Background="{Binding BackgroundColor}" 
+                       TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text="Perc" 
+                       TextBlock.FontSize="16pt"
+                       Background="{Binding BackgroundColor}" 
+                       TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text="Másodperc" 
+                       TextBlock.FontSize="16pt"
+                       Background="{Binding BackgroundColor}" 
+                       TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                    HorizontalAlignment ="Center" VerticalAlignment="Center"
+                    Orientation="Horizontal" >
+            <TextBox Name="hour" TextBlock.FontSize="16pt"
+                     MinWidth="25" MaxHeight="30"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     Background="{Binding BackgroundColor.Value}"
+                     TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text=":" 
+                       TextBlock.FontSize="16pt"/>
+            <TextBox Name="minute" TextBlock.FontSize="16pt"
+                     MinWidth="25" MaxHeight="30"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     Background="{Binding BackgroundColor.Value}"
+                     TextBlock.Foreground="{Binding ForegroundColor.Value}"/>
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text=":" 
+                       TextBlock.FontSize="16pt"/>
+            <TextBox Name="secound" TextBlock.FontSize="16pt"
+                     MinWidth="25" MaxHeight="30"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     Background="{Binding BackgroundColor.Value}"
+                     TextBlock.Foreground="{Binding ForegroundColor.Value}"/>
+        </StackPanel>
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+                   HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                   Margin="5,5" Text="Hátra levő idő:" 
+                   TextBlock.FontSize="16pt"
+                   Background="{Binding BackgroundColor}"
+                   TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+        <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" 
+                    HorizontalAlignment ="Center" VerticalAlignment="Center"
+                    Orientation="Horizontal" >
+            <TextBlock Name="hourBack" Text="0" 
+                       HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       TextAlignment ="Center" 
+                       TextBlock.FontSize="26pt"
+                       Background="{Binding BackgroundColor}"
+                       TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text=":" 
+                       TextBlock.FontSize="26pt"
+                       Background="{Binding BackgroundColor}"
+                       TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Name="minuteBack" Text="0" 
+                       TextBlock.FontSize="26pt"
+                       Background="{Binding BackgroundColor}"
+                       TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text=":" 
+                       TextBlock.FontSize="26pt"
+                       Background="{Binding BackgroundColor}"
+                       TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Name="secoundBack" Text="0" 
+                       TextBlock.FontSize="26pt"
+                       Background="{Binding BackgroundColor}"
+                       TextBlock.Foreground="{Binding ForegroundColor.Value}" />
+        </StackPanel>
+        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
+                    HorizontalAlignment ="Center" Orientation="Horizontal" >
+
+            <Button Name="btnPlay" Margin="5,5" 
+                    HorizontalAlignment ="Center" VerticalAlignment="Center"
+                    MinHeight="40" MinWidth="50"
+                    Content="Start" Click="Button_Start" />
+
+            <Button Name="btnPause" 
+                    HorizontalAlignment ="Center" VerticalAlignment="Center"
+                    Margin="5,5" MinHeight="40" MinWidth="50"
+                    Content="Pause" Click="Button_Pause" />
+
+            <Button Name="btnResume" 
+                    HorizontalAlignment ="Center" VerticalAlignment="Center"
+                    Margin="5,5" MinHeight="40" MinWidth="50"
+                    Content="Resume" Click="Button_Resume" />
+        </StackPanel>
+    </Grid>
+</Window>

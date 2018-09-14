@@ -5,9 +5,66 @@
     xmlns:local="using:CompOffUI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="300" 
+    Width="400"     
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                   HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                   Text="CompOff" />
+        
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                    Orientation="Horizontal" >
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text="Óra" />
+            <TextBox Name="hour" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text="Perc" />
+            <TextBox Name="minute" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text="Másodperc" />
+            <TextBox Name="secound" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                    Orientation="Horizontal" >
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text="Hátra levő idő:" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Name="hourBack" Text="0" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text=":" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Name="minuteBack" Text="0" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Margin="5,5" Text=":" />
+            <TextBlock HorizontalAlignment ="Center" VerticalAlignment="Center" 
+                       Name="secoundBack" Text="0" />
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+                    HorizontalAlignment ="Center" Orientation="Horizontal" >
+
+            <Button HorizontalAlignment ="Center" VerticalAlignment="Center"
+                    Margin="5,5"
+                    Content="Start" Click="Button_Start" />
+
+            <Button HorizontalAlignment ="Center" VerticalAlignment="Center"
+                    Margin="5,5"
+                    Content="Pause" Click="Button_Pause" />
+        </StackPanel>
+
 
     </Grid>
 </Page>
