@@ -71,7 +71,7 @@ namespace CompOffUIWPF
                 var psi = new ProcessStartInfo("shutdown", "/s /t 0");
                 psi.CreateNoWindow = true;
                 psi.UseShellExecute = false;
-                //Process.Start(psi);
+                Process.Start(psi);
             }
         }
 
